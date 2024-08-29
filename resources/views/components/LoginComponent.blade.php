@@ -105,7 +105,7 @@
                             // setTimeout(function() {
                             //     location.reload();
                             // }, 1000);
-
+//test
                             
                             // Manually hide the modal after form submission
                             balanceModal.hide();
