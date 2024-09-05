@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use setasign\Fpdi\Fpdi;
 use PDF;
 
-class jpgtopdfController extends Controller
+class jpgtopdfController extends ConversionController
 {
     /**
      * Display a listing of the resource.
@@ -20,9 +20,15 @@ class jpgtopdfController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+     public function create()
     {
-        return view('frontend.pdftool.jpgtopdf');
+        $data['route'] = 'jpg-to-pdf.store';
+        $data['file_type'] = '.jpg , .jpeg';
+        $data['title'] = 'Jpg To Pdf';
+        $data['type'] = 'Jpg';
+        $data['conversion'] = 'Pdf';
+
+        return view('frontend.common_converter_file', compact('data'));
     }
 
     /**
@@ -34,17 +40,7 @@ class jpgtopdfController extends Controller
             'file' => 'required|mimes:jpg,jpeg|max:8000',
         ]);
 
-        $file = $request->file('file');
-        $fileName = time() . '.' . $file->getClientOriginalExtension();
-        $filePath = $file->storeAs('uploads', $fileName, 'public');
-
-        // Convert JPG to PDF
-        $pdf = new Fpdi();
-        $pdf->AddPage();
-        $pdf->Image(public_path('storage/' . $filePath), 0, 0, 210, 297); // Adjust the image size if needed
-        $outputPath = 'pdf/' . pathinfo($fileName, PATHINFO_FILENAME) . '.pdf';
-        Storage::put('public/' . $outputPath, $pdf->Output('S'));
-
-        return response()->download(public_path('storage/' . $outputPath))->deleteFileAfterSend(true);
+        $request['conversionType'] = 'jpg_to_pdf';
+        return $this->convert($request);
     }
 }

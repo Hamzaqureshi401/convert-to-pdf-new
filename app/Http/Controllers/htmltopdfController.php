@@ -6,38 +6,37 @@ use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Storage;
 
-class htmltopdfController extends Controller
+class htmltopdfController extends ConversionController
 {
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('frontend.pdftool.htmltopdf');
+        $data['route'] = 'html-to-pdf.store';
+        $data['file_type'] = '.html ';
+        $data['title'] = 'Html To Pdf';
+        $data['type'] = 'html';
+        $data['conversion'] = 'Pdf';
+
+        return view('frontend.common_converter_file', compact('data'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $request->validate([
-            'html_file' => 'required|mimes:html|max:2048', // Validate HTML file with a max size of 2MB
-        ]);
+{
+    // Validate the file input to ensure it's an HTML file and less than 8MB
+    $request->validate([
+        'file' => 'required|mimes:html|max:8000',
+    ]);
 
-        // Store the uploaded HTML file temporarily
-        $path = $request->file('html_file')->storeAs('uploads', 'uploaded-file.html');
+    // Add a conversion type to the request
+    $request['conversionType'] = 'html_to_pdf';
 
-        // Get the content of the HTML file
-        $htmlContent = Storage::get($path);
+    // Call the convert method to process the file
+    return $this->convert($request);
+}
 
-        // Generate the PDF from HTML content
-        $pdf = Pdf::loadHTML($htmlContent);
-
-        // Delete the uploaded file after use
-        Storage::delete($path);
-
-        // Download the generated PDF
-        return $pdf->download('converted-file.pdf');
-    }
 }

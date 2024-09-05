@@ -65,6 +65,7 @@
 <body>
     @include('frontend.partials.header')
     <div class="container-flued">
+    
         @yield('frontend.content')
     </div>
     @include('frontend.partials.footer')

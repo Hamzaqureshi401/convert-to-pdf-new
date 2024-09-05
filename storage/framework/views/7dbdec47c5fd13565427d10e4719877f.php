@@ -1,8 +1,6 @@
-@extends('frontend.layouts.main')
+<?php $__env->startSection('title', 'Home Page'); ?>
 
-@section('title', 'Home Page')
-
-@section('frontend.content')
+<?php $__env->startSection('frontend.content'); ?>
 
 <style>
   input[type="file"] {
@@ -24,28 +22,20 @@
               <h1> Word To PDF</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, recusandae ex laudantium nobis </p>
             </div>
-            {{-- <div class="col-md-12 mb-3 align-content-center d-flex">
-              <div class="me-auto align-self-center mb-3">
-                <span class="text-primary"> Max file size : 1024 MB</span>
-              </div>
-              <div class="ms-auto text-end mb-3">
-                <span class="px-2">Upto 100MB</span>
-                <a href="#" class="btn btn-primary btn-sm rounded-pill" type="button" id="button">Go Pro</a>
-              </div>
-            </div> --}}
-            <form action="{{route('convert-to-pdf')}}" method="POST" enctype="multipart/form-data">
-              @csrf
-               @if ($errors->any())
+            
+            <form action="<?php echo e(route('convert-to-pdf')); ?>" method="POST" enctype="multipart/form-data">
+              <?php echo csrf_field(); ?>
+               <?php if($errors->any()): ?>
         <div class="alert alert-danger">
             <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
+                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <li><?php echo e($error); ?></li>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>
         </div>
-    @endif
-              {{-- <input type="hidden" name="_token" value="e7aJVzHBV0dJzCF5hS5ILcsM9jgbO6O1C91lkvSB" autocomplete="off"> --}}
-              {{-- <input type="hidden" name="_token" value="e7aJVzHBV0dJzCF5hS5ILcsM9jgbO6O1C91lkvSB" autocomplete="off"> --}}
+    <?php endif; ?>
+              
+              
               <input type="file" name="file"/>
               <input type="hidden" name="conversionType" value="doc_to_pdf"/>
               <div class="row">
@@ -84,4 +74,5 @@
       </div>
     </div>
   </section>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\convert to pdf\convert-to-pdf\resources\views/frontend/pdftool/wordtopdf.blade.php ENDPATH**/ ?>

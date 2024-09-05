@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DocxtopdfController extends Controller
+class DocxtopdfController extends ConversionController
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,13 @@ class DocxtopdfController extends Controller
      */
     public function create()
     {
-        return view('frontend.pdftool.wordtopdf');
+        $data['route'] = 'docx-to-pdf.store';
+        $data['file_type'] = '.docs , .docx';
+        $data['title'] = 'Word To Pdf';
+        $data['type'] = 'Word';
+        $data['conversion'] = 'Pdf';
+
+        return view('frontend.common_converter_file', compact('data'));
     }
 
     /**
@@ -27,7 +33,12 @@ class DocxtopdfController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $request->validate([
+            'file' => 'required|file|mimes:doc,docx|max:10000', // Ensure the file is DOC or DOCX
+        ]);
+
+        $request['conversionType'] = 'doc_to_pdf';
+        return $this->convert($request);
     }
 
     /**
