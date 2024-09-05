@@ -23,7 +23,7 @@
               <h1> Word To PDF</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, recusandae ex laudantium nobis </p>
             </div>
-            <div class="col-md-12 mb-3 align-content-center d-flex">
+            {{-- <div class="col-md-12 mb-3 align-content-center d-flex">
               <div class="me-auto align-self-center mb-3">
                 <span class="text-primary"> Max file size : 1024 MB</span>
               </div>
@@ -31,7 +31,7 @@
                 <span class="px-2">Upto 100MB</span>
                 <a href="#" class="btn btn-primary btn-sm rounded-pill" type="button" id="button">Go Pro</a>
               </div>
-            </div>
+            </div> --}}
             <form action="{{route('convert-to-pdf')}}" method="POST" enctype="multipart/form-data">
               @csrf
               {{-- <input type="hidden" name="_token" value="e7aJVzHBV0dJzCF5hS5ILcsM9jgbO6O1C91lkvSB" autocomplete="off"> --}}

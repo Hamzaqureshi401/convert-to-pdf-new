@@ -8,6 +8,9 @@ use App\Http\Controllers\PdfToWordController;
 use App\Http\Controllers\DocumentPdfToWordController;
 use App\Http\Controllers\jpgtopdfController;
 use App\Http\Controllers\htmltopdfController;
+use App\Http\Controllers\exceltopdfController;
+use App\Http\Controllers\PowerpointToPdfController;
+use App\Http\Controllers\PdfToExcelController;
 
 
 Route::middleware(['auth'])->group(function () {
@@ -38,13 +41,23 @@ Route::post('/convert-to-pdf', [DocumentController::class, 'convert'])->name('co
 Route::resource("jpg-to-pdf",jpgtopdfController::class);
 // Route::post('/convert-to-pdf', [DocumentController::class, 'convert'])->name('convert-to-pdf');
 
-Route::resource("html-to-pdf",htmltopdfController::class);
+// Route::resource("html-to-pdf",htmltopdfController::class);
+Route::resource('html-to-pdf', htmltopdfController::class)->only(['create', 'store']);
 // Route::post('/convert-to-pdf', [DocumentController::class, 'convert'])->name('convert-to-pdf');
 
-Route::resource("excel-to-pdf",exceltopdfController::class);
+// Route::resource("excel-to-pdf",exceltopdfController::class);
+Route::resource('excel-to-pdf', exceltopdfController::class);
+
+// Route::resource('powerpoint-to-pdf', PowerpointToPdfController::class);
+Route::get('powerpoint-to-pdf', [PowerpointToPdfController::class, 'create'])->name('powerpoint-to-pdf.create');
+Route::post('powerpoint-to-pdf', [PowerpointToPdfController::class, 'store'])->name('powerpoint-to-pdf.store');
 
 
-Route::resource("pdf-to-excel",pdftoexcelController::class);
+
+ Route::resource('pdf-to-excel', PdftoExcelController::class);
+// Route::resource('pdf-to-excel', PdfToExcelController::class)->only([
+//     'create', 'store'
+// ]);
 
 
 Route::resource("pdf-to-jpg",pdftojpgController::class);
@@ -53,7 +66,7 @@ Route::resource("pdf-to-powerpoint",pdftopowerpointController::class);
 
 Route::resource("pdf-to-word",pdftowordController::class);
 
-Route::resource("powerpoint-to-pdf",powerpointtopdfController::class);
+// Route::resource("powerpoint-to-pdf",powerpointtopdfController::class);
 
 // Resource route for PDF to Docx conversion
 //Route::resource('pdf-to-docx', PdfToWordController::class);

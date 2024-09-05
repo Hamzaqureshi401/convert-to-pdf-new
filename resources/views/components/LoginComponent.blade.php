@@ -102,10 +102,10 @@
                         $('#confirmDeduction').off('click').on('click', function() {
                             // Submit the form
                             convertForm.submit();
-                            // setTimeout(function() {
-                            //     location.reload();
-                            // }, 1000);
-//test
+                            //setTimeout(function() {
+                                //location.reload();
+                            //}, 1000);
+
                             
                             // Manually hide the modal after form submission
                             balanceModal.hide();

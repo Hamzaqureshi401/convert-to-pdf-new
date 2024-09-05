@@ -3,24 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Storage;
 
 class htmltopdfController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
         return view('frontend.pdftool.htmltopdf');
-        
     }
 
     /**
@@ -28,38 +21,23 @@ class htmltopdfController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'html_file' => 'required|mimes:html|max:2048', // Validate HTML file with a max size of 2MB
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        // Store the uploaded HTML file temporarily
+        $path = $request->file('html_file')->storeAs('uploads', 'uploaded-file.html');
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+        // Get the content of the HTML file
+        $htmlContent = Storage::get($path);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+        // Generate the PDF from HTML content
+        $pdf = Pdf::loadHTML($htmlContent);
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        // Delete the uploaded file after use
+        Storage::delete($path);
+
+        // Download the generated PDF
+        return $pdf->download('converted-file.pdf');
     }
 }

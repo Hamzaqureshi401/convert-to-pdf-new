@@ -3,17 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PdfParser\PdfParser; // Make sure to install the necessary PDF parsing library
 
-class pdftoexcelController extends Controller
+class PdftoExcelController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -27,38 +22,34 @@ class pdftoexcelController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'file' => 'required|mimes:pdf|max:10000', // Adjust the validation as needed
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        $file = $request->file('file');
+        $pdfPath = $file->storeAs('pdfs', 'temp.pdf'); // Save the PDF file temporarily
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+        // Parse PDF file
+        $pdfParser = new PdfParser();
+        $pdf = $pdfParser->parseFile(storage_path('app/' . $pdfPath));
+        $text = $pdf->getText();
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+        // Create a new Spreadsheet object
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        // Split the PDF text into lines and add them to the spreadsheet
+        $lines = explode("\n", $text);
+        foreach ($lines as $key => $line) {
+            $sheet->setCellValue('A' . ($key + 1), $line);
+        }
+
+        // Save the spreadsheet as an Excel file
+        $writer = new Xlsx($spreadsheet);
+        $excelPath = 'excel/converted.xlsx';
+        $writer->save(storage_path('app/' . $excelPath));
+
+        // Return the file to the user
+        return response()->download(storage_path('app/' . $excelPath));
     }
 }

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use setasign\Fpdi\Fpdi;
+use PDF;
 
 class jpgtopdfController extends Controller
 {
@@ -11,7 +14,7 @@ class jpgtopdfController extends Controller
      */
     public function index()
     {
-        //
+        return view('frontend.pdftool.jpgtopdf');
     }
 
     /**
@@ -19,7 +22,7 @@ class jpgtopdfController extends Controller
      */
     public function create()
     {
-      return view('frontend.pdftool.jpgtopdf');
+        return view('frontend.pdftool.jpgtopdf');
     }
 
     /**
@@ -27,38 +30,21 @@ class jpgtopdfController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'file' => 'required|mimes:jpg,jpeg|max:8000',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        $file = $request->file('file');
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
+        $filePath = $file->storeAs('uploads', $fileName, 'public');
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+        // Convert JPG to PDF
+        $pdf = new Fpdi();
+        $pdf->AddPage();
+        $pdf->Image(public_path('storage/' . $filePath), 0, 0, 210, 297); // Adjust the image size if needed
+        $outputPath = 'pdf/' . pathinfo($fileName, PATHINFO_FILENAME) . '.pdf';
+        Storage::put('public/' . $outputPath, $pdf->Output('S'));
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return response()->download(public_path('storage/' . $outputPath))->deleteFileAfterSend(true);
     }
 }

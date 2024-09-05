@@ -3,17 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\Pdf;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class exceltopdfController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -27,38 +22,28 @@ class exceltopdfController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'file' => 'required|file|mimes:xls,xlsx,csv|max:2048',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        $file = $request->file('file');
+        $spreadsheet = IOFactory::load($file->getPathname());
+        $worksheet = $spreadsheet->getActiveSheet();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+        $html = '<table border="1" style="width:100%; border-collapse: collapse;">';
+        foreach ($worksheet->getRowIterator() as $row) {
+            $html .= '<tr>';
+            $cellIterator = $row->getCellIterator();
+            $cellIterator->setIterateOnlyExistingCells(false);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+            foreach ($cellIterator as $cell) {
+                $html .= '<td>' . htmlspecialchars($cell->getValue()) . '</td>';
+            }
+            $html .= '</tr>';
+        }
+        $html .= '</table>';
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $pdf = Pdf::loadHTML($html);
+        return $pdf->download('excel-to-pdf.pdf');
     }
 }

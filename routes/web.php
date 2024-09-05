@@ -22,7 +22,6 @@ Route::post('/login2', [LoginController::class, 'login'])->name('login2');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/admin-auth.php';
-require __DIR__.'/teacher-auth.php';
 require __DIR__.'/frontend.php';
 require __DIR__.'/backendpdf.php';
 

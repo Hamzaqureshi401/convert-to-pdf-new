@@ -14,33 +14,35 @@
 				<div class="col-md-6">
 					<div class="we-are-content">
 						<span class="top-title">We are</span>
-						<h2>Edit your PDF services specialists we are experts in:</h2>
-						<ul>
-							<li>
-								<i class="bx bx-check"></i>
-								Safe water condition
-							</li>
-							<li>
-								<i class="bx bx-check"></i>
-								PDF Converter maintenance
-							</li>
-							<li>
-								<i class="bx bx-check"></i>
-								Commercial PDF Converter work
-							</li>
-							<li>
-								<i class="bx bx-check"></i>
-								CPO licensed with chemical knowledge
-							</li>
-							<li>
-								<i class="bx bx-check"></i>
-								Renovations and refurbishment
-							</li>
-							<li>
-								<i class="bx bx-check"></i>
-								Leak detection
-							</li>
-						</ul>
+						<h2>Your Ultimate PDF File Converter Solution</h2>
+						<p>In today’s fast-paced digital world, efficiency, accuracy, and convenience are key. At EditEvol, we provide an all-in-one solution to your PDF needs, ensuring that you can seamlessly manage, convert, and edit PDF files with ease. Whether you’re a business professional, student, or someone who frequently deals with documents, EditEvol is designed to simplify your workflow and enhance productivity.</p>
+						<p>Ready to take control of your PDF files? Sign up for EditEvol today and discover the easiest way to convert, edit, and manage your documents.</p>
+						<!--<ul>-->
+						<!--	<li>-->
+						<!--		<i class="bx bx-check"></i>-->
+						<!--		Safe water condition-->
+						<!--	</li>-->
+						<!--	<li>-->
+						<!--		<i class="bx bx-check"></i>-->
+						<!--		PDF Converter maintenance-->
+						<!--	</li>-->
+						<!--	<li>-->
+						<!--		<i class="bx bx-check"></i>-->
+						<!--		Commercial PDF Converter work-->
+						<!--	</li>-->
+						<!--	<li>-->
+						<!--		<i class="bx bx-check"></i>-->
+						<!--		CPO licensed with chemical knowledge-->
+						<!--	</li>-->
+						<!--	<li>-->
+						<!--		<i class="bx bx-check"></i>-->
+						<!--		Renovations and refurbishment-->
+						<!--	</li>-->
+						<!--	<li>-->
+						<!--		<i class="bx bx-check"></i>-->
+						<!--		Leak detection-->
+						<!--	</li>-->
+						<!--</ul>-->
 					</div>
 				</div>
 				<div class="col-md-6 upoladpdf">
@@ -128,17 +130,21 @@
 								<ul class="list-unstyled">
 									<li class="mb-3">
 										<i class="fas fa-check-circle icon-color"></i>
-										<span class="small ms-3">1 Member Only</span>
+										<span class="small ms-3">Access to tools</span>
 									</li>
 									<li class="mb-3">
 										<i class="fas fa-check-circle icon-color"></i>
-										<span class="small ms-3">Available Storage 100GB</span>
+										<span class="small ms-3">Limited document processing</span>
+									</li>
+									<li class="mb-3">
+										<i class="fas fa-check-circle icon-color"></i>
+										<span class="small ms-3">Work on Web</span>
 									</li>
 								</ul>
 
 							</div>
 							<div class="text-center mt-auto mb-4">
-								<span class="fw-bold fs-2 ">₹7</span>/Hours
+								<span class="fw-bold fs-2 ">₹9</span>/Day
 							</div>
 							<div class="text-center"><button type="button" class="btn btncolor">Choose Plan</button>
 							</div>
@@ -155,26 +161,31 @@
 							<!--	<img src="#" class="img-fluid  mb-5" alt="Websearch">-->
 							<!--</div>-->
 
-							<div class="card-title mb-4 text-center fs-2"><h4>Partner Package</h4></div>
+							<div class="card-title mb-4 text-center fs-2"><h4>Premium</h4></div>
 							<div class="pricing">
 								<ul class="list-unstyled">
 									<li class="mb-3">
 										<i class="fas fa-check-circle icon-color"></i>
-										<span class="small ms-3">2-3 Members</span>
+										<span class="small ms-3">Full access to tools</span>
 									</li>
 									<li class="mb-3">
 										<i class="fas fa-check-circle icon-color"></i>
-										<span class="small ms-3">Available Storage 500GB</span>
+										<span class="small ms-3">Unlimited document processing</span>
 									</li>
 									<li class="mb-3">
 										<i class="fas fa-check-circle icon-color"></i>
-										<span class="small ms-3">Free Hosting</span>
+										<span class="small ms-3">Work on Web, Mobile and Desktop</span>
 									</li>
+									<li class="mb-3">
+										<i class="fas fa-check-circle icon-color"></i>
+										<span class="small ms-3">Customer support</span>
+									</li>
+									
 								</ul>
 
 							</div>
 							<div class="text-center mt-auto mb-4">
-								<span class="fw-bold fs-2 ">₹11</span>/Day
+								<span class="fw-bold fs-2 ">₹199</span>/Month
 							</div>
 							<div class="text-center"><button type="button" class="btn btncolor">Choose Plan</button>
 							</div>
@@ -190,30 +201,34 @@
 							<!--	<img src="#" class="img-fluid  mb-5" alt="Websearch">-->
 							<!--</div>-->
 
-							<div class="card-title mb-4 text-center fs-2"><h4>Team Package</h4></div>
+							<div class="card-title mb-4 text-center fs-2"><h4>Business</h4></div>
 							<div class="pricing">
 								<ul class="list-unstyled">
 									<li class="mb-3">
 										<i class="fas fa-check-circle icon-color"></i>
-										<span class="small ms-3">4-7 Members</span>
+										<span class="small ms-3">Full access to tools</span>
 									</li>
 									<li class="mb-3">
 										<i class="fas fa-check-circle icon-color"></i>
-										<span class="small ms-3">Available Storage 2TB</span>
+										<span class="small ms-3">Unlimited document processing</span>
 									</li>
 									<li class="mb-3">
 										<i class="fas fa-check-circle icon-color"></i>
-										<span class="small ms-3">Free Hosting</span>
+										<span class="small ms-3">Work on Web, Mobile and Desktop</span>
 									</li>
 									<li class="mb-3">
 										<i class="fas fa-check-circle icon-color"></i>
-										<span class="small ms-3">Free Domains</span>
+										<span class="small ms-3">Convert scanned PDF to Word</span>
+									</li>
+										<li class="mb-3">
+										<i class="fas fa-check-circle icon-color"></i>
+										<span class="small ms-3">Customer support</span>
 									</li>
 								</ul>
 
 							</div>
 							<div class="text-center mt-auto mb-4">
-								<span class="fw-bold fs-2 ">₹15</span>/Months
+								<span class="fw-bold fs-2 ">₹1800</span>/Year
 							</div>
 							<div class="text-center"><button type="button" class="btn btncolor">Choose Plan</button>
 							</div>
@@ -238,28 +253,30 @@
 				<div class="col-md-6">
 					<div class="we-are-content">
 						<span class="top-title">We are</span>
-						<h2>Edit your PDF services specialists we are experts in:</h2>
+						<h2>Why Choose EditEvol?</h2>
 						<ul>
 							<li>
 								<i class="bx bx-check"></i>
-								Safe water condition
+								<b>Comprehensive PDF Conversion:</b> Our state-of-the-art technology preserves the original formatting and layout, giving you high-quality output every time.
 							</li>
 							<li>
 								<i class="bx bx-check"></i>
-								PDF Converter maintenance
+							<b>User-Friendly Interface:</b> We understand that not everyone is a tech expert, which is why we’ve designed EditEvol to be incredibly user-friendly. 
 							</li>
 							<li>
 								<i class="bx bx-check"></i>
-								Commercial PDF Converter work
+								<b>Advanced Editing Features:</b> Our platform empowers you to make precise changes, ensuring that your documents are exactly as you need them.
+
 							</li>
 							<li>
 								<i class="bx bx-check"></i>
-								CPO licensed with chemical knowledge
+						 	<b> Secure and Confidential:</b> You can rest assured that your sensitive information remains confidential, and your documents are safe from unauthorized access.
+
 							</li>
-							<li>
-								<i class="bx bx-check"></i>
-								We hostall &amp; service salt cell chlorine systems
-							</li>
+							<!--<li>-->
+							<!--	<i class="bx bx-check"></i>-->
+							<!--	We hostall &amp; service salt cell chlorine systems-->
+							<!--</li>-->
 						</ul>
 					</div>
 				</div>
@@ -269,7 +286,8 @@
 
 	<section class="part4 section" style="background: #e2e2e2;">
 		<div class="t-container">
-			<h2>How to compress PDF online?</h2>
+			<h2>Upload Your PDF:</h2>
+			<p>Click on the “Upload PDF” button, and select the file you want to compress.</p>
 			<div class="step-content style2">
 				<div class="step-item">
 					<div class="top">
@@ -277,8 +295,10 @@
 							alt="upload pdf files">
 					</div>
 					<div class="bottom bt-1">
-						<h4><span>Step 01.</span> Choose PDF files</h4>
-						<div class="text"> Select and upload your PDF documents.</div>
+						<h6><span>Step 01.</span>Choose Compression Level</h6>
+						<p style="
+    font-weight: 500;
+">Depending on your needs, you can choose the compression level for your PDF.</p>
 					</div>
 				</div>
 				<div class="step-item">
@@ -287,8 +307,10 @@
 							alt="compress pdf files online">
 					</div>
 					<div class="bottom bt-2">
-						<h4><span>Step 02.</span> Compress PDF</h4>
-						<div class="text">Choose your desired compression level, then press "Compress". </div>
+						<h6><span>Step 02.</span>Start Compression</h6>
+						<p style="
+    font-weight: 500;
+">Click on the “Compress” button. The tool will process your file and reduce its size.</p>
 					</div>
 				</div>
 				<div class="step-item">
@@ -297,9 +319,11 @@
 							alt="download compressed pdf">
 					</div>
 					<div class="bottom bt-3">
-						<h4><span>Step 03.</span> Download PDF</h4>
-						<div class="text">Once completed, download your compressed file.
-						</div>
+						<h6><span>Step 03.</span>Download the Compressed PDF</h6>
+					<p style="
+    font-weight: 500;
+">Once the compression is complete, download the smaller PDF file to your device.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -311,14 +335,10 @@
 		<section class="premium-sec">
 			<div class="prem contain">
 				<div class="pre-column">
-					<h2>Top free tool and extension to <br />radiply grow you business</h2>
-					<p>The PDF software trusted by millions of users
-						PDF CONverter is your number one web app for editing PDF with ease. Enjoy all the tools you
-						need to work
-						efficiently with your digital documents while keeping your data safe and secure.
-						Complete projects faster with batch file processing, convert scanned documents with OCR and
-						e-sign your
-						business agreements.</p>
+					<h2>Benefits of Our PDF Conversion Services</h2>
+					<p>At EditEvol, we’re dedicated to providing you with a seamless, efficient, and powerful PDF management experience. Our services are designed with your needs in mind, offering a range of benefits that enhance your productivity and simplify your workflow.</p>
+					<p>We focus on delivering high-quality conversions that maintain the integrity of your original files, ensuring that your documents look just as intended, no matter the format. With EditEvol, managing your PDFs has never been more straightforward or reliable.</p>
+						
 				</div>
 				<div class="pre-column">
 					<img src="{{ asset('frontend/img/main-img/hero.png') }}" alt="heroImg" class="pre_img" />
@@ -334,94 +354,79 @@
 				<div class="col-lg-6">
 					<div class="faq-accordion">
 						<div class="faq-title">
-							<h2>Frequently asked questions</h2>
-							<span>Just find your answers below</span>
+							<h2>FAQs</h2>
+							<!--<span></span>-->
 						</div>
 
 						<ul class="accordion">
 							<li class="accordion-item">
 								<a class="accordion-title active" href="javascript:void(0)">
 									<i class="bx bx-plus"></i>
-									Which type of PDF Converter services do you offer?
+									1. What file formats can I convert to and from using EditEvol?
 								</a>
 
 								<div class="accordion-content show">
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui in, illo blanditiis
-										quisquam quam asperiores veritatis, earum quibusdam laudantium distinctio dolore
-										placeat recusandae ratione maxime odit delectus nobis doloribus quia Lorem ipsum
-										dolor sit amet consectetur.</p>
+									<p>EditEvol supports a wide range of file formats for conversion to and from PDFs. You can convert documents from Word, Excel, PowerPoint, and other common formats into PDFs, as well as convert PDFs back into various formats. Our platform ensures that your files maintain their original formatting and layout during the conversion process.</p>
 								</div>
 							</li>
 
 							<li class="accordion-item">
 								<a class="accordion-title" href="javascript:void(0)">
 									<i class="bx bx-plus"></i>
-									What is PDF Converter automation?
+								2. How secure is my data with EditEvol?
 								</a>
 
 								<div class="accordion-content">
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui in, illo blanditiis
-										quisquam quam asperiores veritatis, earum quibusdam laudantium distinctio dolore
-										placeat recusandae ratione maxime odit delectus nobis doloribus quia Lorem ipsum
-										dolor sit amet consectetur.</p>
+									<p>Your privacy and data security are our top priorities. EditEvol employs advanced encryption protocols to protect your documents during upload, conversion, and download. We ensure that your files are handled with the utmost confidentiality and are not stored longer than necessary for processing.</p>
 								</div>
 							</li>
 
 							<li class="accordion-item">
 								<a class="accordion-title" href="javascript:void(0)">
 									<i class="bx bx-plus"></i>
-									How long should my filter run each day?
+									Can 3. I edit my PDF files directly on EditEvol?
 								</a>
 
 								<div class="accordion-content">
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui in, illo blanditiis
-										quisquam quam asperiores veritatis, earum quibusdam laudantium distinctio dolore
-										placeat recusandae ratione maxime odit delectus nobis doloribus quia Lorem ipsum
-										dolor sit amet consectetur.</p>
+									<p>Yes, EditEvol provides advanced editing features that allow you to make precise changes to your PDF files. You can modify text, add annotations, and make other adjustments to ensure your documents meet your exact needs. Our user-friendly interface makes it easy to navigate and use these editing tools.</p>
 								</div>
 							</li>
 
 							<li class="accordion-item">
 								<a class="accordion-title" href="javascript:void(0)">
 									<i class="bx bx-plus"></i>
-									Why do I need to remove text from the PDF Converter?
+									4. Do I need to install any software to use EditEvol?
 								</a>
 
 								<div class="accordion-content">
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui in, illo blanditiis
-										quisquam quam asperiores veritatis, earum quibusdam laudantium distinctio dolore
-										placeat recusandae ratione maxime odit delectus nobis doloribus quia Lorem ipsum
-										dolor sit amet consectetur.</p>
+									<p>No, EditEvol is a web-based platform, which means you do not need to install any software on your device. You can access and use all of our PDF management tools directly through your web browser, making it convenient and accessible from any device with an internet connection.</p>
 								</div>
 							</li>
 
 							<li class="accordion-item">
 								<a class="accordion-title" href="javascript:void(0)">
 									<i class="bx bx-plus"></i>
-									How does well water affect my chemical balance?
+									5. What are the pricing options for EditEvol?
 								</a>
 
 								<div class="accordion-content">
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui in, illo blanditiis
-										quisquam quam asperiores veritatis, earum quibusdam laudantium distinctio dolore
-										placeat recusandae ratione maxime odit delectus nobis doloribus quia Lorem ipsum
-										dolor sit amet consectetur.</p>
+									<p>EditEvol offers a range of affordable pricing plans designed to meet different needs, from individual users to businesses. We provide flexible options to ensure you get the most value from our services. For detailed information on our pricing plans, please visit our pricing page or contact our customer support team for assistance.</p>
 								</div>
 							</li>
 
-							<li class="accordion-item">
-								<a class="accordion-title" href="javascript:void(0)">
-									<i class="bx bx-plus"></i>
-									Do I have to cover my PDF Converter when it rains?
-								</a>
+							<!--<li class="accordion-item">-->
+							<!--	<a class="accordion-title" href="javascript:void(0)">-->
+							<!--		<i class="bx bx-plus"></i>-->
+							<!--		Do I have to cover my PDF Converter when it rains?-->
+							<!--	</a>-->
 
-								<div class="accordion-content">
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui in, illo blanditiis
-										quisquam quam asperiores veritatis, earum quibusdam laudantium distinctio dolore
-										placeat recusandae ratione maxime odit delectus nobis doloribus quia Lorem ipsum
-										dolor sit amet consectetur.</p>
-								</div>
-							</li>
+							<!--	<div class="accordion-content">-->
+							<!--		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui in, illo blanditiis-->
+							<!--			quisquam quam asperiores veritatis, earum quibusdam laudantium distinctio dolore-->
+							<!--			placeat recusandae ratione maxime odit delectus nobis doloribus quia Lorem ipsum-->
+							<!--			dolor sit amet consectetur.</p>-->
+							<!--	</div>-->
+							<!--</li>-->
 						</ul>
 					</div>
 				</div>
@@ -448,41 +453,42 @@
 				<div class="col-lg-6">
 					<div class="we-are-content">
 						<span class="top-title">We are</span>
-						<h2>PDF Converter services specialists we are experts in:</h2>
+						<h2>How EditEvol Stands Out</h2>
 
 						<ul>
 							<li>
 								<i class="bx bx-check"></i>
-								 condition
+								  <b>Fast and Reliable Service:</b> Our platform handles large files and complex conversions quickly, so you can get your work done without delays.
 							</li>
 							<li>
 								<i class="bx bx-check"></i>
-								PDF Converter maintenance
+							 <b>No Software Installation Required:</b> EditEvol is accessible from any device with an internet connection, making it incredibly convenient.
 							</li>
 							<li>
 								<i class="bx bx-check"></i>
-								Commercial PDF Converter work
+								<b>Affordable Pricing Plans:</b> We offer a range of affordable pricing plans to suit different needs, from individuals to businesses. 
 							</li>
 							<li>
 								<i class="bx bx-check"></i>
-								CPO licensed with chemical knowledge
+								<b>Exceptional Customer Support:</b> At EditEvol, we’re committed to providing exceptional customer support so you can have best possible experience.
 							</li>
 							<li>
 								<i class="bx bx-check"></i>
-								Renovations and refurbishment
+							<b>Regular Updates and Improvements:</b> With regular updates, you can be sure that you’re always using the most advanced tools available.
+
 							</li>
-							<li>
-								<i class="bx bx-check"></i>
-								Leak detection
-							</li>
-							<li>
-								<i class="bx bx-check"></i>
-								Water chemical balancing
-							</li>
-							<li>
-								<i class="bx bx-check"></i>
-								We hostall &amp; service salt cell chlorine systems
-							</li>
+							<!--<li>-->
+							<!--	<i class="bx bx-check"></i>-->
+							<!--	Leak detection-->
+							<!--</li>-->
+							<!--<li>-->
+							<!--	<i class="bx bx-check"></i>-->
+							<!--	Water chemical balancing-->
+							<!--</li>-->
+							<!--<li>-->
+							<!--	<i class="bx bx-check"></i>-->
+							<!--	We hostall &amp; service salt cell chlorine systems-->
+							<!--</li>-->
 						</ul>
 					</div>
 				</div>

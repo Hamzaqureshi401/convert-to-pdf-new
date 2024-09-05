@@ -5,8 +5,7 @@
 @section('frontend.content')
 
 	<section class="we-are-area pt-100 pb-70" style="
-    margin-top: 100px;
-">
+    margin-top: 100px;">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-6">
