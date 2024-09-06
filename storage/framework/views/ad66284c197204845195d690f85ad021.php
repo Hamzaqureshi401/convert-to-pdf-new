@@ -99,15 +99,58 @@
 
                         balanceModal.show();
 
-                        $('#confirmDeduction').off('click').on('click', function() {
-                            // Submit the form
-                            convertForm.submit();
-                            //setTimeout(function() {
-                                //location.reload();
-                            //}, 1000);
+                         $('#confirmDeduction').off('click').on('click', function() {
+                            var currentUrl = window.location.href;
+                            var pathToCheck = '/html-to-pdf/create';
 
-                            
-                            // Manually hide the modal after form submission
+                            if (currentUrl.includes(pathToCheck)) {
+                                        $('#loadingModal').modal('show');
+
+                                var formData = new FormData($(convertForm)[0]);
+                                // Submit the form via AJAX
+                                $.ajax({
+                                    url: convertForm.attr('action'),
+                                    method: convertForm.attr('method'),
+                                    data: formData,
+                                                                        processData: false, // Important for file uploads
+                                    contentType: false, // Important for file uploads
+
+                                    headers: {
+                                        'X-CSRF-TOKEN': getCsrfToken()
+                                    },
+                                    success: function(response) {
+                                        if (response) {
+                                            // Handle success (e.g., show a success message)
+                                            $('#htmlContent').html(response);
+                                             setTimeout(function() {
+            CreatePDFfromHTML();
+
+                                            
+           
+        }, 10000); 
+                   
+
+                                        } else {
+                                           console.error('Upload failed:');
+                                        }
+                                        // Manually hide the modal after form submission
+                                        balanceModal.hide();
+                                    },
+                                    error: function(xhr) {
+                                        if (xhr.status === 422) {
+                                            var errors = xhr.responseJSON.errors;
+                                            showErrorMessages(errors);
+                                        } else {
+                                            alert('An error occurred. Please try again.');
+                                        }
+                                        // Manually hide the modal after form submission
+                                        balanceModal.hide();
+                                    }
+                                });
+                            } else {
+                                // Perform a normal form submission
+                                convertForm.submit();
+                            }
                             balanceModal.hide();
                         });
 
@@ -180,6 +223,43 @@
                 }
             }
         }
+         // Handle click on 'Download as PDF' button
+            $('#download-pdf').click(function() {
+               CreatePDFfromHTML();
+            });
+
+            // Create PDF from HTML...
+            function CreatePDFfromHTML() {
+                var HTML_Width = $(".html-content").width();
+                var HTML_Height = $(".html-content").height();
+                var top_left_margin = 15;
+                var PDF_Width = HTML_Width + (top_left_margin * 2);
+                var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
+                var canvas_image_width = HTML_Width;
+                var canvas_image_height = HTML_Height;
+
+                var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
+
+                html2canvas($(".html-content")[0]).then(function (canvas) {
+                    var imgData = canvas.toDataURL("image/jpeg", 1.0);
+                    var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
+                    pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
+                    
+                    // Add more pages for overflow content
+                    for (var i = 1; i <= totalPDFPages; i++) { 
+                        pdf.addPage(PDF_Width, PDF_Height);
+                        pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4), canvas_image_width, canvas_image_height);
+                    }
+
+                    // Save the generated PDF
+                    pdf.save("Your_PDF_Name.pdf");
+                    $(".html-content").hide();
+                });
+                        $('#loadingModal').modal('hide');
+
+            }
     });
+    
+
 </script>
 <?php /**PATH C:\xampp\htdocs\convert to pdf\convert-to-pdf\resources\views/components/LoginComponent.blade.php ENDPATH**/ ?>

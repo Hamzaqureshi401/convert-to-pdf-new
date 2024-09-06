@@ -240,7 +240,7 @@ class ConversionController extends Controller
         return response()->json(['path' => Storage::url($path), 'status' => 'success']);
     }
 
-    private function debitWallet()
+    public function debitWallet()
     {
         $user = auth()->user();
         try {

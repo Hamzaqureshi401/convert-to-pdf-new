@@ -26,17 +26,35 @@ class htmltopdfController extends ConversionController
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-{
-    // Validate the file input to ensure it's an HTML file and less than 8MB
-    $request->validate([
-        'file' => 'required|mimes:html|max:8000',
-    ]);
+    {
+         // Validate the request
+        $request->validate([
+            'file' => 'required|mimes:html|max:2048', // Adjust size limit as needed
+        ]);
 
-    // Add a conversion type to the request
-    $request['conversionType'] = 'html_to_pdf';
+        // Handle the uploaded file
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            
+            // Read the file content
+            $content = file_get_contents($file->getRealPath());
 
-    // Call the convert method to process the file
-    return $this->convert($request);
+            // Inject base URL into the HTML content for relative paths
+            $baseUrl = url('/'); // Your application's base URL
+            $content = preg_replace('/<head([^>]*)>/', '<head$1><base href="' . $baseUrl . '">', $content);
+            $this->deductPayment();
+            
+            // Pass the modified HTML content to the Blade view
+            return view('someblade', compact('content'));
+        }
+    }
+
+    public function deductPayment(){
+
+        $debitStatus = $this->debitWallet();
+    }
+
 }
+    
 
-}
+

@@ -31,10 +31,11 @@ Route::resource("docx-to-pdf",DocxtopdfController::class);
 
 
 Route::resource("jpg-to-pdf",jpgtopdfController::class);
-// Route::post('/convert-to-pdf', [DocumentController::class, 'convert'])->name('convert-to-pdf');
 
 // Route::resource("html-to-pdf",htmltopdfController::class);
 Route::resource('html-to-pdf', htmltopdfController::class)->only(['create', 'store']);
+Route::get('deductPayment', [htmltopdfController::class, 'deductPayment'])->name('deduct.Payment');
+
 // Route::post('/convert-to-pdf', [DocumentController::class, 'convert'])->name('convert-to-pdf');
 
 // Route::resource("excel-to-pdf",exceltopdfController::class);
